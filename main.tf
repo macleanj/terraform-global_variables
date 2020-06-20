@@ -273,6 +273,98 @@ variable "specific-config" {
         }
       }
     }
+    cl-website-prod-jerome = {
+      us-east-1 = {
+        dev = {
+          ip_offset   = [6, 1, 1]
+          subnet_base = "NA"
+        }
+        test = {
+          ip_offset   = [6, 1, 2]
+          subnet_base = "NA"
+        }
+        qa = {
+          ip_offset   = [6, 1, 3]
+          subnet_base = "NA"
+        }
+        staging = {
+          ip_offset   = [6, 1, 4]
+          subnet_base = "NA"
+        }
+        prod = {
+          ip_offset   = [6, 1, 5]
+          subnet_base = "NA"
+        }
+      }
+      eu-west-1 = {
+        dev = {
+          ip_offset   = [6, 2, 1]
+          subnet_base = "NA"
+        }
+        test = {
+          ip_offset   = [6, 2, 2]
+          subnet_base = "NA"
+        }
+        qa = {
+          ip_offset   = [6, 2, 3]
+          subnet_base = "NA"
+        }
+        staging = {
+          ip_offset   = [6, 2, 4]
+          subnet_base = "NA"
+        }
+        prod = {
+          ip_offset   = [6, 2, 5]
+          subnet_base = "NA"
+        }
+      }
+    }
+    cl-website-preprod-jerome = {
+      us-east-1 = {
+        dev = {
+          ip_offset   = [7, 1, 1]
+          subnet_base = "NA"
+        }
+        test = {
+          ip_offset   = [7, 1, 2]
+          subnet_base = "NA"
+        }
+        qa = {
+          ip_offset   = [7, 1, 3]
+          subnet_base = "NA"
+        }
+        staging = {
+          ip_offset   = [7, 1, 4]
+          subnet_base = "NA"
+        }
+        prod = {
+          ip_offset   = [7, 1, 5]
+          subnet_base = "NA"
+        }
+      }
+      eu-west-1 = {
+        dev = {
+          ip_offset   = [7, 2, 1]
+          subnet_base = "NA"
+        }
+        test = {
+          ip_offset   = [7, 2, 2]
+          subnet_base = "NA"
+        }
+        qa = {
+          ip_offset   = [7, 2, 3]
+          subnet_base = "NA"
+        }
+        staging = {
+          ip_offset   = [7, 2, 4]
+          subnet_base = "NA"
+        }
+        prod = {
+          ip_offset   = [7, 2, 5]
+          subnet_base = "NA"
+        }
+      }
+    }
   }
 }
 
