@@ -397,6 +397,16 @@ variable "account-wide-config" {
         zone_name_private = "aws.internal"
       }
     }
+    cl-website-prod-jerome = {
+      route53 = {
+        zone_name_private = "aws.internal"
+      }
+    }
+    cl-website-preprod-jerome = {
+      route53 = {
+        zone_name_private = "aws.internal"
+      }
+    }
   }
 }
 
