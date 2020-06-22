@@ -43,6 +43,9 @@ output "s3_central_logging" {
 output "s3_central_state" {
   value = module.variables.s3_central_state
 }
+output "eks_cluster_name" {
+  value = module.variables.eks_cluster_name
+}
 output "zone_name_public" {
   value = module.variables.zone_name_public
 }

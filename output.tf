@@ -43,6 +43,9 @@ output "s3_central_logging" {
 output "s3_central_state" {
   value = lower(local.global-config.s3.central_state)
 }
+output "eks_cluster_name" {
+  value = lower(local.global-config.eks.cluster_name)
+}
 output "zone_name_public" {
   value = local.global-config.route53.zone_name_public
 }

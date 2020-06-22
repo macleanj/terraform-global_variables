@@ -452,6 +452,9 @@ variable "global-config" {
       central_logging  = "central-logging"
       central_state    = "central-state"
     }
+    eks = {
+      cluster_name = "EKS-shared-testing"
+    }
   }
 }
 
