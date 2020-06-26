@@ -454,7 +454,7 @@ variable "global-config" {
       central_state    = "central-state"
     }
     eks = {
-      cluster_name = "EKS-shared-testing"
+      cluster_name = "EKS-lab"
     }
   }
 }
