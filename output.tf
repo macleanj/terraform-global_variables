@@ -25,9 +25,6 @@ output "environment_short" {
 output "provider" {
   value = local.provider
 }
-output "env_size" {
-  value = local.env_size
-}
 output "subnet_base" {
   value = local.specific-config.subnet_base
 }
@@ -48,6 +45,9 @@ output "eks_cluster_name" {
 }
 output "zone_name_public" {
   value = local.global-config.route53.zone_name_public
+}
+output "env_size" {
+  value = local.env_size
 }
 output "instance_type" {
   value = local.instance_type

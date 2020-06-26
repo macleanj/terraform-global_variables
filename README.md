@@ -99,9 +99,9 @@ The following resources are configured separately:
 
 ## Supportive commands
 ```
-# shown all regions
+# shows all regions
 aws ec2 describe-regions | jq -r '.Regions[].RegionName
 
-# shown all az per regions
+# shows all az per regions
 aws ec2 describe-availability-zones --region eu-west-1
 ```

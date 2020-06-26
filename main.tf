@@ -22,8 +22,9 @@ locals {
 
   # Global configurations
   global-config = var.global-config
-  env_size      = var.environment_to_size_map[local.environment] # Using default sizing accorinding to the environment
-  instance_type = var.instance_type_map[local.env_size]
+
+  env_size      = var.env_size != "" ? var.env_size : var.environment_to_size_map[local.environment] # Using default sizing accorinding to the environment
+  instance_type = var.instance_type != "" ? var.instance_type : var.instance_type_map[local.env_size]
   region_short  = local.global-config.region_short["${local.region}"]
   continent     = local.global-config.continent["${local.region}"]
   country       = local.global-config.country["${local.region}"]

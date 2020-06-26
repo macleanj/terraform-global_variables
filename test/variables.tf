@@ -38,25 +38,15 @@ locals {
     ) :
     key => value if(value != null)
   }
+
+  # Specific variable (not used by module)
+  #
+  #
 }
 
-####################################
-# Advanced settings
-####################################
-
-# May override size based on terraform.workspace
-# Synopsis: "terraform.workspace" = "size"
-variable "workspace_to_size_map" {
-  description = "Mapping size to environment"
-  type        = map
-  default = {
-    dev = "micro"
-  }
-}
-
-####################################
-# Do not change byond this point (except source path of module "variables")
-####################################
+########################################################################
+# Advanced settings. Do not change unless you know what you are doing.
+########################################################################
 
 # Fetch all global variables
 module "variables" {
@@ -65,10 +55,6 @@ module "variables" {
   # workspaces must have format [account-profile]__[region]__[environment]
   # connection_string "default" allowed. Defaults will be used.
   workspaces = terraform.workspace
+  # env_size        = "small"    # Overwrites size based on environment. Also controls related resources.
+  # instance_type   = "t2.small" # Overwrites instance_type based on env_size. Controls instance_type only.
 }
-
-locals {
-  # Using sizing accorinding to the workspace/environment
-  env_size = "${module.variables.environment == "dev" ? lookup(var.workspace_to_size_map, terraform.workspace, "micro") : module.variables.env_size}"
-}
-

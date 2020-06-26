@@ -25,9 +25,6 @@ output "country" {
 output "provider" {
   value = module.variables.provider
 }
-output "env_size" {
-  value = local.env_size
-}
 output "subnet_base" {
   value = module.variables.subnet_base
 }
@@ -48,6 +45,9 @@ output "eks_cluster_name" {
 }
 output "zone_name_public" {
   value = module.variables.zone_name_public
+}
+output "env_size" {
+  value = module.variables.env_size
 }
 output "instance_type" {
   value = module.variables.instance_type
