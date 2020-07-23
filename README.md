@@ -1,8 +1,15 @@
 # Global variables
-This module facilitates a single point of configuration of the AWS infrastructure. It can control:
+This module facilitates a single point of configuration of the cloud infrastructure. It can control:
 - Multiple AWS accounts
 - Multiple regions
 - Multiple environments
+
+The module is initially written for AWS, hence the documentation is tailored to AWS terminology. The module can equally be applied to Azure and GCP with the following terminology exchanges:
+
+| AWS | Azure | GCP |
+| --- | --- | --- |
+| accounts | subscriptions | TBD |
+| regions | locations | TBD |
 
 The variables described in this modules can offer:
 - Global configuration        (e.g. environment sizing configuration)
@@ -76,32 +83,13 @@ done
 ```
 
 ## Prerequisite resources
-Some resources are a fundamental dependency for other resources and should be configured before any other resources. The following list highlights the prerequisites, incl the configuration items that need to be added to the global configuration:
-- Organizations: incl Service Control Policies
-- Route53: private (and public) DNS zones
-  - zone-id
-  - zone-name
+Some resources might be a fundamental dependency for other resources and should be configured before any other resources to get the names or ID.
 
 ## Cross configurations
 Some elements may cross the boundaries of the account, region, and environment combination.<br>
 Examples are:
 - Peering connections
-Cross configurations are configured in the variables module, however separate projects will be applied to get around the various dependencies.
-
-<span style="color:red">**TODO:**</span>
-- How to deal with (circular) dependencies like DNS over a Peering connection and inter-account IAM roles? Separate project?
-> <span style="color:red">**STATUS:** IAM and DNS association will be realized manually for testing: https://aws.amazon.com/blogs/security/how-to-centralize-dns-management-in-a-multi-account-environment/</span>
+Cross configurations are configured in the variables module, however separate projects would need to be applied to get around the various dependencies.
 
 ## Manual configurations
-Some items will be configured completely outside the scope of these variable definitions. It might be because the resource is already a global resource (only configured once) or is specific for the account, region, or environment.<br>
-The following resources are configured separately:
-- S3 storage
-
-## Supportive commands
-```
-# shows all regions
-aws ec2 describe-regions | jq -r '.Regions[].RegionName
-
-# shows all az per regions
-aws ec2 describe-availability-zones --region eu-west-1
-```
+Some items will be configured completely outside the scope of these variable definitions. It might be because the resource is already a global resource (only configured once) or is specific for the account, region, or environment.

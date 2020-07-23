@@ -1,5 +1,13 @@
 locals {
+  # default_account_profile
+  # - AWS   : The profile used from ~/.aws
+  # - Azure : The resouce group
   default_account_profile = "default"
+
+  # default_region
+  # - AWS   : The region
+  # - Azure : The location (=region)
+
   default_region          = "us-east-1"
   default_environment     = "dev"
   provider                = "CrossLogic"
