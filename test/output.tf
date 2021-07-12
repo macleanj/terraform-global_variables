@@ -55,3 +55,12 @@ output "instance_type" {
 output "standard_tags" {
   value = local.standard_tags
 }
+output "standard_propagate_tags" {
+  value = local.standard_propagate_tags
+}
+output "standard_metatdata_tags" {
+  value = local.standard_metatdata_tags
+}
+output "standard_annotations" {
+  value = local.standard_annotations
+}

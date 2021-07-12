@@ -503,20 +503,19 @@ locals {
     Description     = "Not set"         # General description of the rousource
     Tier            = "Not set"         # frontend, backend, storage, network
     Namespace       = "Not set"         # Area of operation. E.g. EKS, VPC, RDS, etc
-    ApplicationID   = "Not set"         # Used to identify disparate resources that are related to a specific application
-    ApplicationName = "Not set"         # Used to identify resources groupas that are related to a specific application
+    ApplicationID   = "Not set"         # Used to identify resources that are related to a specific application
+    ApplicationName = "Not set"         # Used to identify resources that are related to a specific application
     ApplicationRole = "Not set"         # Used to describe the function of a particular resource (e.g. web server, message broker, database)
     OS              = "Not set"         # Operating System family
     OsVersion       = "Not set"         # Operating System version
     Cluster         = "Not set"         # Used to identify resource farms that share a common configuration and perform a specific function for an application
     Provider        = local.provider    # Owner of the entire platform. This tag is used for global resources.
-    Version         = "Not set"         # Used to help distinguish between different versions of resources or applications
 
     # Automation Tags
-    Creator      = "Terraform"  # Creator of the resources
-    CreationDate = "YYYY-MM-DD" # Date
-    Opt          = "Not set"    # Opt in/Opt out: Used to indicate whether a resource should be automatically included in an automated activity such as starting, stopping, or resizing instances
-    Security     = "Not set"    # Used to determine requirements such as encryption or enabling of VPC Flow Logs, and also to identify route tables or security groups that deserve extra scrutiny
+    Creator       = "Terraform"  # Creator of the resources
+    DeployVersion = "YYYY-MM-DD" # Used to help distinguish between different versions of resources or applications
+    Opt           = "Not set"    # Opt in/Opt out: Used to indicate whether a resource should be automatically included in an automated activity such as starting, stopping, or resizing instances
+    Security      = "Not set"    # Used to determine requirements such as encryption or enabling of VPC Flow Logs, and also to identify route tables or security groups that deserve extra security
 
     # Business Tags
     Owner        = "Jerome Mac Lean" # Used to identify who is responsible for the resource
@@ -528,4 +527,6 @@ locals {
     Confidentiality = "Not set" # An identifier for the specific data-confidentiality level a resource supports
     Compliance      = "Not set" # An identifier for workloads designed to adhere to specific compliance requirements
   }
+
+  standard_annotations = {}
 }

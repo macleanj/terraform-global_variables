@@ -39,6 +39,27 @@ locals {
     key => value if(value != null)
   }
 
+  standard_propagate_tags = flatten([
+    for key, value in local.standard_tags : {
+      key                 = key
+      value               = value
+      propagate_at_launch = "true"
+    }
+  ])
+
+  standard_metatdata_tags = {
+    for key, value in local.standard_tags :
+      replace(lower(key), "/[^-a-zA-Z0-9_.]/", "_") => replace(lower(value), "/[^-a-zA-Z0-9_.]/", "_")
+  }
+
+  standard_annotations = {
+    for key, value in merge(
+      module.variables.standard_annotations,
+      {}
+    ) :
+    key => value if(value != null)
+  }
+
   # Specific variable (not used by module)
   #
   #

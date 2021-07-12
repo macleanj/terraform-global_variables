@@ -55,3 +55,6 @@ output "instance_type" {
 output "standard_tags" {
   value = local.standard_tags
 }
+output "standard_annotations" {
+  value = local.standard_annotations
+}
